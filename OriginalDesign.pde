@@ -31,8 +31,6 @@ void setup()
   rightPointNoseX = 100;
   leftRightNoseY = 100;
   
-  setupText();
-  
   noLoop();
 }
 
@@ -51,11 +49,6 @@ void draw()
   {
     displayFace();
   }  
-}
-
-void setupText() {
-  PFont font = loadFont("HelveticaNeueLTStd-Lt-48.vlw");
-  textFont(font);
 }
 
 void displayText() {
