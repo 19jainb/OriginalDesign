@@ -11,6 +11,13 @@ float upPointNoseY; // working
 float leftPointNoseX;
 float rightPointNoseX;
 float leftRightNoseY;
+float smileX;
+float smileY;
+float smileWidth;
+float smileHeight;
+float lineX1;
+float lineX2;
+float lineY;
 
 void setup()
 {
@@ -30,6 +37,15 @@ void setup()
   leftPointNoseX = 100;
   rightPointNoseX = 100;
   leftRightNoseY = 100;
+  
+  smileX = 100;
+  smileY = 100;
+  smileWidth = 0;
+  smileHeight = 0;
+  
+  lineX1 = 100;
+  lineX2 = 100;
+  lineY = 100;
   
   noLoop();
 }
@@ -84,10 +100,18 @@ void displayFace()
   
   fill(255, 255, 255); // smile
   stroke(0);
-  arc(100, 135, 125, 100, 0, PI); // need to expand/shrink
+  arc(100, smileY, smileWidth, smileHeight, 0, PI); // need to expand/shrink
+  
+  if (smileY < 135) smileY = smileY + .25;
+  if (smileWidth < 125) smileWidth = smileWidth + .5;
+  if (smileHeight < 100) smileHeight = smileHeight + .5;
   
   fill(0); // line connected endpoints of smile
-  line(37.5, 135, 162.5, 135); // need to expand/shrink
+  line(lineX1, lineY, lineX2, lineY); // need to expand/shrink
+  
+  if (lineX1 > 37.5) lineX1 = lineX1 - .25;
+  if (lineX2 < 162.5) lineX2 = lineX2 + .25;
+  if (lineY < 135) lineY = lineY + .25;
   
   rect(leftEyeX, leftEyeY, 10, 10); // eyes
   rect(rightEyeX, rightEyeY, 10, 10);
