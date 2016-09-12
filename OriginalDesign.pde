@@ -1,7 +1,7 @@
 int buttonRadius;
 int faceRadius;
 int textboxRadius;
-float textSize;
+float textSize1;
 boolean lockMousePress;
 float leftEyeX;
 float leftEyeY;
@@ -26,7 +26,7 @@ void setup()
   buttonRadius = 200;
   faceRadius = 0;
   textboxRadius = 200;
-  textSize = 75;
+  textSize1 = 75;
   
   leftEyeX = 100;
   leftEyeY = 100;
@@ -70,9 +70,9 @@ void draw()
 void displayText() {
   int point = 200 - textboxRadius;
   
-  if (textSize > 1)
+  if (textSize1 > 1)
   {
-    textSize(textSize);
+    textSize(textSize1);
   } else
   {
     textSize(1); 
@@ -82,7 +82,7 @@ void displayText() {
   fill(255, 250, 250);
   text("easy", point, point, textboxRadius - point, textboxRadius - point);
   textboxRadius--;
-  textSize = textSize - .8;
+  textSize1 = textSize1 - .8;
 }  
 
 void displayFace()
