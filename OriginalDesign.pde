@@ -12,9 +12,9 @@ float leftEyeX;
 float leftEyeY;
 float rightEyeX;
 float rightEyeY;
-float upPointNoseY; // done
-float leftPointNoseX; // done
-float rightPointNoseX; // done
+float upPointNoseY; // working
+float leftPointNoseX;
+float rightPointNoseX;
 float leftRightNoseY;
 
 void setup()
@@ -99,10 +99,10 @@ void displayFace()
   
   fill(255, 255, 255); // smile
   stroke(0);
-  arc(100, 135, 125, 100, 0, PI);
+  arc(100, 135, 125, 100, 0, PI); // need to expand/shrink
   
   fill(0); // line connected endpoints of smile
-  line(37.5, 135, 162.5, 135);
+  line(37.5, 135, 162.5, 135); // need to expand/shrink
   
   rect(leftEyeX, leftEyeY, 10, 10); // eyes
   rect(rightEyeX, rightEyeY, 10, 10);
