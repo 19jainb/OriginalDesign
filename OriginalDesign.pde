@@ -1,8 +1,3 @@
-import ddf.minim.*;
-
-Minim minim;
-AudioPlayer audio;
-
 int buttonRadius;
 int faceRadius;
 int textboxRadius;
@@ -35,9 +30,6 @@ void setup()
   leftPointNoseX = 100;
   rightPointNoseX = 100;
   leftRightNoseY = 100;
-  
-  minim = new Minim(this);
-  audio = minim.loadFile("that_was_easy.wav");
   
   setupText();
   
@@ -128,8 +120,6 @@ void mousePressed()
 {
   if (lockMousePress == false) {
   lockMousePress = true;
-  audio.play();
-  audio.rewind();
   loop();
   }
 }
